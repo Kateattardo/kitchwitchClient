@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 function RecipeSearch() {
   const [ingredients, setIngredients] = useState('');
@@ -30,7 +31,9 @@ function RecipeSearch() {
           'http://localhost:8000/spoonacular/recipes',
           {
             params: {
-              recipeId: recipe.id
+              recipeId: recipe.id,
+              instructionsRequired: true
+
             }
           }
         );
@@ -41,7 +44,8 @@ function RecipeSearch() {
     };
     return (
       <div key={recipe.id} onClick={handleOnClick}>
-        <h3>{recipe.title}</h3>
+       {/* <Link to="/recipe.Id"><h3>{recipe.title}</h3></Link> */}
+       <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>
         <img src={recipe.image} alt={recipe.title} />
       </div>
     )

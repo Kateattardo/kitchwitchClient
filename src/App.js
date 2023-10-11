@@ -13,11 +13,14 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import RecipeSearch from './components/search/search'
+import Show from './components/show'
+
 
 const App = () => {
 
   const [user, setUser] = useState(null)
   const [msgAlerts, setMsgAlerts] = useState([])
+
 
   console.log('user in app', user)
   console.log('message alerts', msgAlerts)
@@ -46,6 +49,8 @@ const App = () => {
 				<Header user={user} />
 				<RecipeSearch />
 				<Routes>
+				<Route path='/recipe/:id'element={<Show msgAlert={'here is the recipe'} user={user}/> } />
+			 <Route></Route>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
 					<Route
 						path='/sign-up'
