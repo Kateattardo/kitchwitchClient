@@ -43,7 +43,7 @@ function RecipeSearch() {
       }
     };
     return (
-      <div key={recipe.id} onClick={handleOnClick}>
+      <div key={recipe.id}>
        {/* <Link to="/recipe.Id"><h3>{recipe.title}</h3></Link> */}
        <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>
         <img src={recipe.image} alt={recipe.title} />

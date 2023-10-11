@@ -10,22 +10,23 @@ function Show(props) {
   const { id } = useParams();
   console.log('show ',id)
 
-//    useEffect(() => {
-//     const showRecipe = async () => {
-//       const response = await axios.get(`http://localhost:8000/spoonacular/recipe/${id}`);
-//       console.log('show response', response)
-//       setRecipe(response.data);
-// }});
+   useEffect(() => {
+    const showRecipe = async () => {
+      const response = await axios.get(`http://localhost:8000/spoonacular/recipe/${id}`);
+      console.log('show response', response)
+      setRecipe(response.data);
+}
+showRecipe()},[]);
 
-    const response = axios.get(`http://localhost:8000/spoonacular/recipe/${id}`);
-      console.log('response.data', response.data)
+   
+      console.log('recipe', recipe)
   return (
       <div>
-        {/* <h1>{props.msgAlert}</h1>
+        <h1>{props.msgAlert}</h1>
         <h2>{recipe.title}</h2>
         <img src={recipe.image} alt={recipe.title} />
         <p>Instructions: {recipe.instructions}</p>
-        <p>User: {props.user}</p> */}
+        <p>User: {props.user}</p>
       </div>
     )
 
