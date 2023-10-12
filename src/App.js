@@ -13,7 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import RecipeSearch from './components/search/search'
-import Show from './components/show'
+import Show from './components/show/show'
 
 
 const App = () => {
@@ -47,9 +47,9 @@ const App = () => {
 		return (
 			<Fragment>
 				<Header user={user} />
-				<RecipeSearch />
 				<Routes>
-				<Route path='/recipe/:id'element={<Show msgAlert={'here is the recipe'} user={user}/> } />
+				<Route path='/' element={<RecipeSearch />} />
+				<Route path='/recipe/:id'element={<Show msgAlert={'here is the recipe'} /> } />
 			 <Route></Route>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
 					<Route

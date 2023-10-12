@@ -21,13 +21,19 @@ showRecipe()},[]);
    
       console.log('recipe', recipe)
   return (
-      <div>
-        <h1>{props.msgAlert}</h1>
-        <h2>{recipe.title}</h2>
-        <img src={recipe.image} alt={recipe.title} />
-        <p>Instructions: {recipe.instructions}</p>
-        <p>User: {props.user}</p>
-      </div>
+    <div>
+    <h2>{recipe.title}</h2>
+    <img src={recipe.image} alt={recipe.title} />
+    <p>Instructions: {recipe.instructions}</p>
+  </div>
+
+      // <div>
+      //   <h1>{props.msgAlert}</h1>
+      //   <h2>{recipe.title}</h2>
+      //   <img src={recipe.image} alt={recipe.title} />
+      //   <p>Instructions: {recipe.instructions}</p>
+      //   <p>User: {props.user}</p>
+      // </div>
     )
 
   }
