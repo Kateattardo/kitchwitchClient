@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from 'axios';
+import CommentForm from '../show/comment/commentForm';
+import CommentList from '../show/comment/commentList';
 
 
 
@@ -25,16 +27,10 @@ showRecipe()},[]);
     <h2>{recipe.title}</h2>
     <img src={recipe.image} alt={recipe.title} />
     <p>Instructions: {recipe.instructions}</p>
+    <CommentForm />
   </div>
 
-      // <div>
-      //   <h1>{props.msgAlert}</h1>
-      //   <h2>{recipe.title}</h2>
-      //   <img src={recipe.image} alt={recipe.title} />
-      //   <p>Instructions: {recipe.instructions}</p>
-      //   <p>User: {props.user}</p>
-      // </div>
-    )
+  )
 
   }
 

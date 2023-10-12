@@ -10,7 +10,7 @@ const CommentList = ({ comments, spoonacularId }) => {
         <p>Your the first to comment on this recipe!</p>
       ) : (
         <ul>
-          {relevantComments.map(comment => (
+          {userComments.map(comment => (
             <li key={comment.recipe.id}>
               {comment.text}
               {comment.user.id}
