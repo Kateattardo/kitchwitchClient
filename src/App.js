@@ -12,8 +12,8 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-import RecipeSearch from './components/search/search'
-import Show from './components/show/show'
+import RecipeSearch from './components/search/recipeSearch'
+import Show from './components/show/showRecipe'
 
 
 const App = () => {
