@@ -1,47 +1,13 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom'
 
-function RecipeSearch() {
-  const [ingredients, setIngredients] = useState('');
-  const [recipes, setRecipes] = useState([]);
-  const [instructions, setInstructions] = useState('')
-  console.log('render instructions', instructions)
-
-  const handleSearch = async () => {
-    try {
-      const response = await axios.get(
-        'http://localhost:8000/spoonacular/complex-search',
-        {
-          params: {
-            ingredients,
-          }
-        }
-      );
-      setRecipes(response.data.results);
-    } catch (error) {
-      console.error("Error fetching recipes:", error);
-    }
-  };
-
+function RecipeSearch({
+  recipes,
+  ingredients,
+  setIngredients,
+  handleSearch
+}) {
   const recipeViews = recipes.map(recipe => {
-    const handleOnClick = async () => {
-      try {
-        const response = await axios.get(
-          'http://localhost:8000/spoonacular/recipes',
-          {
-            params: {
-              recipeId: recipe.id,
-              instructionsRequired: true
-
-            }
-          }
-        );
-        setInstructions(response.data);
-      } catch (error) {
-        console.error("Error fetching recipes:", error);
-      }
-    };
     return (
       <div key={recipe.id}>
        <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>

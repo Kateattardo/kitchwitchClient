@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-
+import React, { useState } from 'react';
 
 const CommentForm = ({ recipeId, onCommentSubmit }) => {
   const [commentText, setCommentText] = useState('');
