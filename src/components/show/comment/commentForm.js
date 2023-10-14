@@ -10,35 +10,13 @@ const CommentForm = ({ onCommentSubmit, id }) => {
     setCommentText("");
   };
 
-  //   return (
-  //     <div>
-  //       {!isEditing ? (
-  //         <>
-  //           <p>{commentText}</p>
-  //           <button onClick={() => onDeleteComment(comment.id)}>Delete</button>
-  //           <button onClick={() => setIsEditing(true)}>Edit</button>
-  //         </>
-  //       ) : (
-  //         <CommentUpdateForm
-  //           commentId={comment.id}
-  //           initialText={comment.text}
-  //           onUpdateComment={(commentId, updatedText) => {
-  //             onUpdateComment(commentId, updatedText);
-  //             setIsEditing(false);
-  //           }}
-  //           userToken={userToken}
-  //         />
-  //       )}
-  //     </div>
-  //   );
-  // };
-
   return (
-    <form onSubmit={handleCommentSubmit}>
-      <textarea
+    <form onSubmit={handleCommentSubmit} className="d-flex align-items-center">
+      <input
         value={commentText}
         onChange={(e) => setCommentText(e.target.value)}
         placeholder="Add a comment..."
+        className="form-control me-3"
       />
       <button className="btn btn-primary" type="submit">
         Post Comment

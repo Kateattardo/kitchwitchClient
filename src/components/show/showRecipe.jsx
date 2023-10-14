@@ -33,7 +33,9 @@ function Show(props) {
         Authorization: `Bearer ${props?.user?.token}`,
       },
     };
-    await axios.post(commentUrl, body, options);
+    const response = await axios.post(commentUrl, body, options);
+    console.log("rspn", response);
+    setList((prevState) => [...prevState, response.data.comment]);
   }
 
   const commentForm =
@@ -77,20 +79,28 @@ function Show(props) {
       },
     };
     const response = await axios.delete(commentUrl, options);
-    if(response.data.success){
-      const updatedList = list.filter(l => l._id !== commentId);
+    if (response.data.success) {
+      const updatedList = list.filter((l) => l._id !== commentId);
       setList(updatedList);
     }
   }
 
   return (
     <div>
-      <h2>{recipe.title}</h2>
       <img src={recipe.image} alt={recipe.title} />
-      <p>Instructions: {recipe.instructions}</p>
-      {props.user && <CommentForm onCommentSubmit={onCommentSubmit} id={id} />}
+      <div class="card current-recipe" key={recipe.id}>
+        <div class="card-body">
+          <h5 class="card-title">{recipe.title}</h5>
+          <p class="card-text">Instructions: {recipe.instructions}</p>
+        </div>
+      </div>
+      <div className="comment-form">
+        {props.user && (
+          <CommentForm onCommentSubmit={onCommentSubmit} id={id} />
+        )}
+      </div>
 
-      <div>
+      <div className="comment-list">
         {list?.map((l) => {
           const { _id, text } = l;
           return (

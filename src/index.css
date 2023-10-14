@@ -3,10 +3,50 @@ body {
   font-family: 'Varela Round', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background-color: rgba(255, 166, 0, 0.5) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.comment-list, .comment-form, .recipe-search{
+  max-width: 700px;
+  margin-bottom: 12px;
+}
+
+.comment-form button{
+  text-wrap: nowrap;
+}
+
+.recipe-wrapper {
+max-width: 1000px;
+width: 100%;
+margin:  0 auto;
+}
+
+.recipes .card {
+  height: 100%;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .btn{
+  margin-top: auto;
+}
+
+.current-recipe{
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+}
+
+body iframe{
+  display: none !important;
 }

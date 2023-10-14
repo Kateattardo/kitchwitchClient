@@ -15,13 +15,15 @@ import ChangePassword from "./components/auth/ChangePassword";
 import RecipeSearch from "./components/search/recipeSearch";
 import Show from "./components/show/showRecipe";
 import axios from "axios";
+
 const App = () => {
   const [user, setUser] = useState(null);
   const [msgAlerts, setMsgAlerts] = useState([]);
   const [ingredients, setIngredients] = useState("");
   const [recipes, setRecipes] = useState([]);
 
-  const handleSearch = async () => {
+  const handleSearch = async (e) => {
+    e.preventDefault();
     try {
       const response = await axios.get(
         "http://localhost:8000/spoonacular/complex-search",

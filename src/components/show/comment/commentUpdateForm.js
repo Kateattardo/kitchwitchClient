@@ -26,19 +26,28 @@ const CommentUpdateForm = ({
   const CancelEdit = () => setIsEditing(false);
 
   return (
-    <form>
+    <form className="p-2 d-flex align-items-center">
       <input
         value={commentText}
         onChange={(e) => setCommentText(e.target.value)}
         disabled={isEditing ? false : true}
+        className="me-3 form-control"
       />
-      {isEditing && <button onClick={CancelEdit}>Cancel</button>}
-      <button
-        onClick={(e) => (isEditing ? handleSubmit(e) : handleEditMode(e))}
-      >
-        {isEditing ? "Update" : "Edit"}
-      </button>
-      <button onClick={(e) => onDeleteComment(e, commentId)}>Delete</button>
+      {isEditing && <button className="btn btn-secondary" onClick={CancelEdit}>Cancel</button>}
+      <div className="d-flex align-items-center">
+        <button
+          className="btn btn-secondary"
+          onClick={(e) => (isEditing ? handleSubmit(e) : handleEditMode(e))}
+        >
+          {isEditing ? "Update" : "Edit"}
+        </button>
+        <button
+          className="btn btn-danger ms-3"
+          onClick={(e) => onDeleteComment(e, commentId)}
+        >
+          Delete
+        </button>
+      </div>
     </form>
   );
 };
