@@ -1,22 +1,47 @@
 // import axios from "axios"
-import { useState } from "react"
+import { useState } from "react";
 
-const CommentUpdateForm = ({ commentId, initialText, onUpdateComment, userToken }) => {
-  const [commentText, setCommentText] = useState(initialText);
+const CommentUpdateForm = ({
+  text,
+  onUpdateComment,
+  commentId,
+  onDeleteComment,
+}) => {
+  const [commentText, setCommentText] = useState(text);
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    onUpdateComment(commentId, commentText);
+    const response = await onUpdateComment(commentId, commentText);
+    if (response.data.success) {
+      setIsEditing(false);
+    }
   };
 
+  const handleEditMode = (e) => {
+    e.preventDefault();
+    setIsEditing(!isEditing);
+  };
+
+  const CancelEdit = () => setIsEditing(false);
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input value={commentText} onChange={(e) => setCommentText(e.target.value)} />
-      <button type="submit">Update</button>
+    <form>
+      <input
+        value={commentText}
+        onChange={(e) => setCommentText(e.target.value)}
+        disabled={isEditing ? false : true}
+      />
+      {isEditing && <button onClick={CancelEdit}>Cancel</button>}
+      <button
+        onClick={(e) => (isEditing ? handleSubmit(e) : handleEditMode(e))}
+      >
+        {isEditing ? "Update" : "Edit"}
+      </button>
+      <button onClick={(e) => onDeleteComment(e, commentId)}>Delete</button>
     </form>
   );
 };
-
 
 // export default function CommentUpdateForm (props) {
 //   const [commentText, setCommentText] = useState('')
