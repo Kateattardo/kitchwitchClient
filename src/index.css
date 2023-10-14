@@ -1,16 +1,16 @@
 body {
   margin: 0;
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Philosopher', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(255, 166, 0, 0.5) !important;
+  background-color: rgba(255, 166, 0, 0.75) !important;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Philosopher', sans-serif;
+
 }
 
 .comment-list, .comment-form, .recipe-search{
@@ -49,4 +49,8 @@ margin:  0 auto;
 
 body iframe{
   display: none !important;
+}
+
+.green-navbar {
+  background-color: green !important;
 }

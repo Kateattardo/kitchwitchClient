@@ -1,5 +1,3 @@
-// import image from "./src/images/HP image.jpg";
-
 const Home = (props) => {
   // const { msgAlert, user } = props
   console.log("props in home", props);

@@ -1,69 +1,68 @@
 import React, { Fragment } from "react";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+
 const linkStyle = {
-  color: "white",
+  color: "black", // Setting text color to black
   textDecoration: "none",
 };
+
 const authenticatedOptions = (
   <>
-    <Nav.Item className="m-2">
+    <Button variant="light" className="m-2">
       <Link to="change-password" style={linkStyle}>
         Change Password
       </Link>
-    </Nav.Item>
-    <Nav.Item className="m-2">
+    </Button>
+    <Button variant="light" className="m-2">
       <Link to="sign-out" style={linkStyle}>
         Sign Out
       </Link>
-    </Nav.Item>
+    </Button>
   </>
 );
 
 const unauthenticatedOptions = (
   <>
-    <Nav.Item className="m-2">
+    <Button variant="light" className="m-2">
       <Link to="sign-up" style={linkStyle}>
         Sign Up
       </Link>
-    </Nav.Item>
-    <Nav.Item className="m-2">
+    </Button>
+    <Button variant="light" className="m-2">
       <Link to="sign-in" style={linkStyle}>
         Sign In
       </Link>
-    </Nav.Item>
+    </Button>
   </>
 );
 
 const alwaysOptions = (
   <>
-    <Nav.Item className="m-2">
+    <Button variant="light" className="m-2">
       <Link to="/" style={linkStyle}>
         Home
       </Link>
-    </Nav.Item>
+    </Button>
   </>
 );
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand>
-      <Link to="/" style={linkStyle}>
-        KitchWitch
-      </Link>
-    </Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ml-auto">
-        {user && (
-          <span className="navbar-text mr-2">Welcome, {user.email}</span>
-        )}
-        {alwaysOptions}
-        {user ? authenticatedOptions : unauthenticatedOptions}
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
+  <header
+    style={{
+      background: "rgba(255, 166, 0, 0.75) !important",
+      padding: "0.5rem 1rem",
+    }}
+  >
+    <Link to="/" className="text-decoration-none text-black">
+      KitchWitch
+    </Link>
+    <div className="ml-auto d-inline">
+      {user && <span className="text-black mr-2">Welcome, {user.email}</span>}
+      {alwaysOptions}
+      {user ? authenticatedOptions : unauthenticatedOptions}
+    </div>
+  </header>
 );
 
 export default Header;
