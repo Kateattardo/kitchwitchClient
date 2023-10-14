@@ -1,12 +1,14 @@
+// import image from "./src/images/HP image.jpg";
+
 const Home = (props) => {
-	// const { msgAlert, user } = props
-	console.log('props in home', props)
+  // const { msgAlert, user } = props
+  console.log("props in home", props);
 
-	return (
-		<>
-			<h2>Home Page</h2>
-		</>
-	)
-}
+  return (
+    <>
+      <h2>Home Page</h2>
+    </>
+  );
+};
 
-export default Home
+export default Home;

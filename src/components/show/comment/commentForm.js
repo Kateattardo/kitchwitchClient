@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import CommentUpdateForm from './CommentUpdateForm';
-
+import React, { useState } from "react";
+import CommentUpdateForm from "./CommentUpdateForm";
 
 const CommentForm = ({ onCommentSubmit, id }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [commentText, setCommentText] = useState('');
+  const [commentText, setCommentText] = useState("");
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     onCommentSubmit(commentText, id);
-    setCommentText('');
+    setCommentText("");
   };
 
   //   return (
@@ -41,7 +40,9 @@ const CommentForm = ({ onCommentSubmit, id }) => {
         onChange={(e) => setCommentText(e.target.value)}
         placeholder="Add a comment..."
       />
-      <button type="submit">Post Comment</button>
+      <button className="btn btn-primary" type="submit">
+        Post Comment
+      </button>
     </form>
   );
 };
