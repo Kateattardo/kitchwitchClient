@@ -6,6 +6,14 @@
 -MongoDB
 -Bootstrap CSS
 
+# Wireframes
+
+![Wireframe 1](/src/images/WF1.jpg)
+![Wireframe 2](/src/images/WF%202.jpg)
+![Wireframe 3](/src/images/WF%203.jpg)
+![Wireframe 4](/src/images/WF4.jpg)
+![Wireframe 5](/src/images/WF5.jpg)
+
 ### Recipes
 
 | Verb | URI Pattern            | Controller#Action |

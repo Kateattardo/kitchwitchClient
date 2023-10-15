@@ -33,10 +33,14 @@ const CommentUpdateForm = ({
         disabled={isEditing ? false : true}
         className="me-3 form-control"
       />
-      {isEditing && <button className="btn btn-secondary" onClick={CancelEdit}>Cancel</button>}
+      {isEditing && (
+        <button className="btn btn-secondary" onClick={CancelEdit}>
+          Cancel
+        </button>
+      )}
       <div className="d-flex align-items-center">
         <button
-          className="btn btn-secondary"
+          className="btn btn-light"
           onClick={(e) => (isEditing ? handleSubmit(e) : handleEditMode(e))}
         >
           {isEditing ? "Update" : "Edit"}

@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
 const linkStyle = {
-  color: "black", // Setting text color to black
+  color: "black",
   textDecoration: "none",
 };
 
@@ -55,7 +55,7 @@ const Header = ({ user }) => (
     }}
   >
     <Link to="/" className="text-decoration-none text-black">
-      KitchWitch
+      Kitchwitch
     </Link>
     <div className="ml-auto d-inline">
       {user && <span className="text-black mr-2">Welcome, {user.email}</span>}

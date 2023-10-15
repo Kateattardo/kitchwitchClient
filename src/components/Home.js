@@ -5,6 +5,7 @@ const Home = (props) => {
   return (
     <>
       <h2>Home Page</h2>
+      <img src="src/images/kitchwitch_logo.png" alt="kitchwitch logo"></img>
     </>
   );
 };
