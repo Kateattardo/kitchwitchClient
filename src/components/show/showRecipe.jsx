@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import CommentForm from "./comment/CommentForm";
-import CommentList from "./comment/CommentList";
+// import CommentList from "./comment/CommentList";
 import CommentUpdateForm from "./comment/CommentUpdateForm.js";
-import DeleteComment from "./comment/DeleteComment";
+// import DeleteComment from "./comment/DeleteComment";
 
 function Show(props) {
   const [recipe, setRecipe] = useState({});
@@ -38,12 +38,12 @@ function Show(props) {
     setList((prevState) => [...prevState, response.data.comment]);
   }
 
-  const commentForm =
-    props.user == null ? (
-      <></>
-    ) : (
-      <CommentForm recipeId={id} onCommentSubmit={onCommentSubmit} />
-    );
+  // const commentForm =
+  props.user == null ? (
+    <></>
+  ) : (
+    <CommentForm recipeId={id} onCommentSubmit={onCommentSubmit} />
+  );
 
   const [list, setList] = useState([]);
   useEffect(() => {

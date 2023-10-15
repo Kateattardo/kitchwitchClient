@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CommentUpdateForm from "./CommentUpdateForm";
+// import CommentUpdateForm from "./CommentUpdateForm";
 
 const CommentForm = ({ onCommentSubmit, id }) => {
   const [isEditing, setIsEditing] = useState(false);
