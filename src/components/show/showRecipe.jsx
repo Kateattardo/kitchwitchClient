@@ -91,7 +91,10 @@ function Show(props) {
       <div class="card current-recipe" key={recipe.id}>
         <div class="card-body">
           <h5 class="card-title">{recipe.title}</h5>
-          <p class="card-text">Instructions: {recipe.instructions}</p>
+          <p class="card-text">
+            Instructions:{" "}
+            <span dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
+          </p>
         </div>
       </div>
       <div className="comment-form">

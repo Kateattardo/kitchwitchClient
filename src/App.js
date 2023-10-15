@@ -76,20 +76,21 @@ const App = () => {
         <Route
           path="/"
           element={
-            <RecipeSearch
-              recipes={recipes}
-              ingredients={ingredients}
-              setIngredients={setIngredients}
-              handleSearch={handleSearch}
-            />
+            <>
+              <RecipeSearch
+                recipes={recipes}
+                ingredients={ingredients}
+                setIngredients={setIngredients}
+                handleSearch={handleSearch}
+              />
+              <Home msgAlert={msgAlert} user={user} />
+            </>
           }
         />
         <Route
           path="/recipe/:id"
           element={<Show msgAlert={"here is the recipe"} user={user} />}
         />
-        <Route></Route>
-        <Route path="/" element={<Home msgAlert={msgAlert} user={user} />} />
         <Route
           path="/sign-up"
           element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
