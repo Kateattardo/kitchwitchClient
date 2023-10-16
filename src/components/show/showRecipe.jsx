@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import CommentForm from "./comment/CommentForm";
+// import CommentForm from "./comment/CommentForm";
 // import CommentList from "./comment/CommentList";
-import CommentUpdateForm from "./comment/CommentUpdateForm.js";
+// import CommentUpdateForm from "./comment/CommentUpdateForm.js";
 // import DeleteComment from "./comment/DeleteComment";
 
 function Show(props) {
