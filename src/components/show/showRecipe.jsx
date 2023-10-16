@@ -42,7 +42,7 @@ function Show(props) {
   props.user == null ? (
     <></>
   ) : (
-    <CommentForm recipeId={id} onCommentSubmit={onCommentSubmit} />
+    // <CommentForm recipeId={id} onCommentSubmit={onCommentSubmit} />
   );
 
   const [list, setList] = useState([]);
@@ -99,7 +99,7 @@ function Show(props) {
       </div>
       <div className="comment-form">
         {props.user && (
-          <CommentForm onCommentSubmit={onCommentSubmit} id={id} />
+          // <CommentForm onCommentSubmit={onCommentSubmit} id={id} />
         )}
       </div>
 
@@ -107,7 +107,7 @@ function Show(props) {
         {list?.map((l) => {
           const { _id, text } = l;
           return (
-            <CommentUpdateForm
+            // <CommentUpdateForm
               key={_id}
               commentId={_id}
               onUpdateComment={onUpdateComment}
