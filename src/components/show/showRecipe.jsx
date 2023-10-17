@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-// import CommentForm from "./comment/CommentForm";
-// import CommentList from "./comment/CommentList";
-// import CommentUpdateForm from "./comment/CommentUpdateForm.js";
-// import DeleteComment from "./comment/DeleteComment";
+import CommentForm from "./comment/CommentForm";
+import CommentUpdateForm from "./comment/CommentUpdateForm.js";
 
 function Show(props) {
   const [recipe, setRecipe] = useState({});
@@ -37,13 +35,6 @@ function Show(props) {
     console.log("rspn", response);
     setList((prevState) => [...prevState, response.data.comment]);
   }
-
-  // const commentForm =
-  props.user == null ? (
-    <></>
-  ) : (
-    // <CommentForm recipeId={id} onCommentSubmit={onCommentSubmit} />
-  );
 
   const [list, setList] = useState([]);
   useEffect(() => {
@@ -99,7 +90,7 @@ function Show(props) {
       </div>
       <div className="comment-form">
         {props.user && (
-          // <CommentForm onCommentSubmit={onCommentSubmit} id={id} />
+          <CommentForm onCommentSubmit={onCommentSubmit} id={id} />
         )}
       </div>
 
@@ -107,7 +98,7 @@ function Show(props) {
         {list?.map((l) => {
           const { _id, text } = l;
           return (
-            // <CommentUpdateForm
+            <CommentUpdateForm
               key={_id}
               commentId={_id}
               onUpdateComment={onUpdateComment}
@@ -117,27 +108,7 @@ function Show(props) {
           );
         })}
       </div>
-
-      {/* <CommentList
-        recipeId={id}
-        list={list}
-        onDeleteComment={onDeleteComment}
-        onUpdateComment={onUpdateComment}
-        userId={props.user?._id}
-        userToken={props.user?.token}
-      /> */}
     </div>
-    // <div>
-    //   <h2>{recipe.title}</h2>
-    //   <img src={recipe.image} alt={recipe.title} />
-    //   <p>Instructions: {recipe.instructions}</p>
-    //   {commentForm}
-    //   <CommentList
-    //     recipeId={id}
-    //     userId={props.user?._id}
-    //     userToken={props.user?.token}
-    //   />
-    // </div>
   );
 }
 

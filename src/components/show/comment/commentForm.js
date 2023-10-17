@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-// import CommentUpdateForm from "./CommentUpdateForm";
 
 const CommentForm = ({ onCommentSubmit, id }) => {
-  const [isEditing, setIsEditing] = useState(false);
   const [commentText, setCommentText] = useState("");
   const handleCommentSubmit = (e) => {
     e.preventDefault();

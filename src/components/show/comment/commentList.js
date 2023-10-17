@@ -1,5 +1,5 @@
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import CommentForm from "./CommentForm";
 
 const CommentList = ({ list, onDeleteComment, onUpdateComment, userToken }) => {
