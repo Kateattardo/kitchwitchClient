@@ -2,7 +2,8 @@ let apiUrl;
 const apiUrls = {
   // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
   production: "https://kitchwitchapi.onrender.com",
-  development: "http://localhost:8000",
+  development: "https://kitchwitchapi.onrender.com",
+  // development: "http://localhost:8000",
 };
 
 if (window.location.hostname === "localhost") {
